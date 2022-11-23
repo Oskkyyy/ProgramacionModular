@@ -12,11 +12,11 @@ void celcius()
 	k = c+273.15;
 	printf("El equivalente en Kelvin es de: %f",k);
 }
-//Calculo de temperatura de Farenheit a Celcius y Kelvin
+//Calculo de temperatura de Fahrenheit a Celcius y Kelvin
 void fahrenheit ()
 {
 	float c2,f2,k2;
-	printf("Escribe la temperatura en grados Farenheit:");
+	printf("Escribe la temperatura en grados Fahrenheit:");
 	scanf("%f",&f2);
 
 	c2 = (f2-32)/1.8;
