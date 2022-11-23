@@ -1,9 +1,9 @@
 // Funcionamiento de un factorial
 #include <stdio.h>
-int factorial (int n)
+	int factorial (int n)
 {
-	long int f;
-	if(n==0)
+		long int f;
+		if(n==0)
 	{
 	       	f=1;
 	}
