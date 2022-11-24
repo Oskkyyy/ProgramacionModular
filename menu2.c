@@ -1,11 +1,18 @@
-//Prueba de menu jsjsjs
+//Menu de programas desarrollados sobre el semestre
 #include <stdio.h>
 #include<math.h>
 int main () {
         int opcion, co, ca, base, alt, l, base2, alt2, bMay, bMen, alt3, fact, n;
 	int t, aa[10][10], b[10][10], cc[10][10];
+	int mat1[2][2],mat2[2][2],resultado=0, resul[2][2];
+	int ii,jj,ccc;
 	int matriz[3][3], columna, fila, i=0, j=0;
 	float h ,a, a1, a2, a3, a4, a5, a6, c,f,k, c2,f2,k2, c3,f3,k3;
+	float horas, salarioNeto, salarioNeto2, salarioNeto3, incremento, salarioBruto, retencion1, retencion2;
+	float ivaRe=0.12;
+	float ivaAg=0.16;
+	float costo=100;
+	float bono=0.05;
         char opc, opc2, opc3;
         do{
                 // Imprimir las opciones del menu
@@ -87,7 +94,7 @@ int main () {
 					printf("Escribe la temperatura en grados Celcius:");
 					scanf("%f",&c);
 					f = (c*1.8)+32;
-					printf("El equivalente en grados Fahrenheit es de: %f",f);
+					printf("El equivalente en grados Fahrenheit es de: %f\n",f);
 					k = c+273.15;
 					printf("El equivalente en Kelvin es de: %f",k);
 					break;
@@ -95,7 +102,7 @@ int main () {
 					printf("Escribe la temperatura en grados Fahrenheit:");
 					scanf("%f",&f2);
 					c2 = (f2-32)/1.8;
-					printf("El equivalente en grados Celcius es de: %f",c2);
+					printf("El equivalente en grados Celcius es de: %f\n",c2);
 					k2 = 5*((f2-32)/9)+273.15;
 					printf("El equivalente en Kelvin es de: %f",k2);
 					break;
@@ -103,7 +110,7 @@ int main () {
 					printf("Escribe la temperatura en Kelvin:");
 					scanf("%f",&k3);
 					c3 = k3-273.15;
-					printf("El equivalente en grados Celcius es de: %f",c3);
+					printf("El equivalente en grados Celcius es de: %f\n",c3);
 					f3 = 1.8*(k3-273.15)+32;
 					printf("El equivalente en Fahrenheit es de: %f",f3);
 					break;
@@ -161,8 +168,48 @@ int main () {
 		 		     fact=factorial(n);
 				printf("\n El factorial =%d \n",fact);
                       break;
-              case 5:
-//Multiplicacion de matrices
+              case 5:   
+			for(ii=0;ii<2;ii++)
+			for(jj=0;jj<2;jj++)
+			resul[ii][jj]=0;
+			for(ii=0;ii<2;ii++)
+			{
+				for(jj=0;jj<2;jj++)
+				{
+					printf("Introduzca el valor de A(%d,%d):",ii+1,jj+1);
+					scanf("%d", &mat1[ii][jj]);
+				}
+			}
+			for(ii=0;ii<2;ii++)
+			{
+				for(jj=0;jj<2;jj++)
+				{
+					printf("Introduzca el valor de B(%d,%d):",ii+1,jj+1);
+					scanf("%d", &mat2[ii][jj]);
+				}
+			}		
+			for(ii=0;ii<2;ii++)
+			{
+				for(ccc=0;ccc<2;ccc++)
+				{
+					for(jj=0;jj<2;jj++)
+					{
+					resultado=resultado+(mat1[ii][jj]*mat2[jj][ccc]);
+					}
+					resul[ii][ccc]=resultado;
+					resultado=0;
+				}
+			}
+			printf("Matriz resultado ");
+				for(ii=0;ii<2;ii++)
+				{
+
+					for(ccc=0;ccc<2;ccc++)
+					{
+						printf("%d\t",resul[ii][ccc]);
+					}
+				}
+		
                       break;
               case 7:
        			 printf("De cuantas filas es la matriz\n ");
@@ -202,18 +249,46 @@ int main () {
        			 }
                       break;
               case 8:
-
+		      printf("Calculo de salario\n");
+			printf("Ingrese el numero de horas trabajadas \n");
+			scanf("%f",&horas);
+			if (horas<100)
+			{
+				salarioBruto= horas*costo;
+				retencion1= salarioBruto*ivaRe;
+				salarioNeto= salarioBruto-retencion1;
+				retencion2= salarioNeto*ivaAg;
+				salarioNeto2= salarioNeto-retencion2;
+				incremento=salarioNeto2*bono;
+				salarioNeto3=salarioNeto2+incremento;
+				printf("Salario neto: %f\n",salarioNeto3);
+				printf("Salario bruto: %f\n",salarioNeto);
+				printf("Retencion del 12 porciento : %f\n",retencion1);
+				printf("Impuesto del 16 porciento : %f\n",retencion2);
+				printf("Bono del 5 porciento : %f\n",incremento);
+			}
+				else
+				{
+					salarioBruto= horas*costo;
+					retencion1= salarioBruto*ivaRe;
+					salarioNeto= salarioBruto-retencion1;
+					retencion2= salarioNeto*ivaAg;
+					salarioNeto2= salarioNeto-retencion2;
+					printf("Salario neto: %f\n",salarioNeto2);
+					printf("Salario bruto: %f\n",salarioNeto);
+					printf("Retencion del 12 porciento : %f\n",retencion1);
+					printf("Impuesto del 16 porciento : %f\n",retencion2);
+				}
                       break;
               case 9:
-
-
                       break;
-              default
-                      :printf("Opcion incorrecta\n");
+              default:
+	      printf("Opcion incorrecta\n");
               break;
       }
         } while (opcion != 9);
         return 0;
 }
+
 
 
