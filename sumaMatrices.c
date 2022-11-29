@@ -1,5 +1,6 @@
 //Programa para sumar matrices
 #include <stdio.h>
+//Función que realiza la operacion de suma entre las matrices y lo asigna a la mtriz c
 void sumaMatriz(int t, int a[][10],int b[][10],int c[][10])
 {
 	for (int i=0;i<t;i++)
@@ -12,6 +13,7 @@ void sumaMatriz(int t, int a[][10],int b[][10],int c[][10])
 		}
 	}
 }
+//Funcion que solicita al usuario escriba los elementos de las matrices A y B y los guarde en las variables a,b
 void tecleeMatriz(int t, int a[][10],int b[][10])
 {
 	for (int i=0;i<t;i++)
@@ -39,6 +41,7 @@ void tecleeMatriz(int t, int a[][10],int b[][10])
 			
 }
 int main ()
+	//Funcion principal que llama a las otras funciones cuando el usuario lo requiere
 {
 int t, a[10][10], b[10][10], c[10][10];
 			printf("Teclee tamaño de la matriz");

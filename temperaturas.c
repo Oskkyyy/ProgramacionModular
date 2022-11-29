@@ -39,7 +39,7 @@ void kelvin ()
 
 }
 int main ()
-
+//Se imprimen y se mandan a llamar las posibles funciones requeridas por el usuario
 {
 	char opc;
 	printf("a)Equivalencias de Celcius a Fahrenheit y Kelvin\n");
