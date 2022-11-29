@@ -4,14 +4,17 @@
 
 
 int main (){
-
+//Se declaran las variables de la matriz, las columnas y filas màs los indices inicializados en 0
 	int matriz[3][3], columna, fila, i=0, j=0;
+	//Se solicitan la cantidad de filas para la matriz y se almacena en fila
 	printf("De cuantas filas es la matriz\n ");
 	scanf("%d", &fila);
 
-	printf("De cuantas columas es la matriz\n ");
+	//Se solicitan la cantidad de columnas para la matriz y se almacena en columna
+	printf("De cuantas columnas es la matriz\n ");
 	scanf("%d", &columna);
 		
+	//Se solicitan los elementos de la matriz y se almacena en el arreglo matriz
 	for(i = 0;i < fila;i++)
 	{
 		for(j = 0;j < columna;j++)
@@ -21,7 +24,7 @@ int main (){
 		}
 	}
 
-
+//Se imprime la matriz original
 	printf("Matriz dada ");
 
 	for(i = 0;i < fila;i++)
@@ -31,7 +34,7 @@ int main (){
 			printf("%d\t", matriz[i][j]);
 		}
 	}	
-	
+	//Se imprime la matriz transpuesta
 	printf("Matriz transpuesta ");
 	
 	for(i = 0;i < columna;i++)

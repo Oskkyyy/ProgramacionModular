@@ -40,7 +40,7 @@ void trapecio ()
 
 }
 int main ()
-
+//Se llaman las funciones a ejecutar elegidas por el usuario 
 {
 	char opc;
 	printf("a)Area de un rectangulo\n");

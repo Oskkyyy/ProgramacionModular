@@ -40,7 +40,7 @@ void angulo ()
 	printf("El tercer angulo mide: %f",a3);
 }
 int main ()
-
+//Se imprimen y se mandan a llamar las posibles funciones requeridas por el usuario
 {
 	char opc;
 	printf("a)Hipotenusa de un triangulo rectangulo\n");
